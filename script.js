@@ -25,7 +25,6 @@ let content = document.getElementById("statustext");
     
     webSocket.addEventListener('message', (event) => {
         data = JSON.parse(event.data)
-        console.log(data)
 
         if(event.data == "{\"op\":1,\"d\":{\"heartbeat_interval\":30000}}"){
             webSocket.send(JSON.stringify({
