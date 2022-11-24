@@ -58,7 +58,7 @@ webSocket.addEventListener("message", (event) => {
     } else {
       icon.className = "fa-brands fa-spotify";
       content.innerText = `i'm not listening to anything right now`;
-      content.href = "";
+      content.href = "https://open.spotify.com/user/xxtvgl8ffahtg5s22hu1l7squ";
     }
   }
 });
