@@ -15,7 +15,7 @@ html {
 
 body {
     text-align: center;
-    background-color: black;
+    background-color: var(--black);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,7 +30,7 @@ h1.title {
     font-size: 120px;
     padding:0;
     margin: 0;
-    color: var(--white)
+    color: var(--snow)
 }
 
 
@@ -38,7 +38,7 @@ i.icons  {
     font-size: 40px; 
     padding-left: 20px;
     padding-bottom: 10px;
-    color: var(--white);
+    color: var(--snow);
 
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
