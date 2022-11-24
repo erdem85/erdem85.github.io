@@ -73,7 +73,7 @@
                 }
             }))
             setInterval(() => {
-                socket.send(JSON.stringify({
+                webSocket.send(JSON.stringify({
                     op: 3,
                     d: {
                         heartbeat_interval: 30000
