@@ -1,6 +1,6 @@
 body {
     text-align: center;
-    background-color: rgb(28, 20, 10);
+    background-color: black;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,9 +10,43 @@ img {
     width: 200px;
 }
 
+h1.title {
+    font-family: Nanum Pen;
+    font-size: 120px;
+    padding:0;
+    margin: 0;
+    color: var(--white)
+}
+
+
 i.icons  {
     font-size: 40px; 
     padding-left: 20px;
     padding-bottom: 10px;
-    color: var(--blue)
+    color: var(--white);
+
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    -moz-transform: scale(1);
+    transition: all .3s ease-in;
+    -moz-transition: all .3s ease-in;
+    -webkit-transition: all .3s ease-in;
+    -ms-transition: all .3s ease-in;
+}
+
+i.icons:hover {
+    z-index:4;
+    -webkit-transform: scale(1.5);
+    -ms-transform: scale(1.5);  
+    -moz-transform: scale(1.5);
+    transform: scale(1.5);
+}
+
+@font-face {
+    font-family: 'Nanum Pen';
+    src: url('fonts/NanumPen.woff2') format('woff2'),
+        url('fonts/NanumPen.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }
