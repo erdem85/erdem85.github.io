@@ -20,6 +20,7 @@ fetch(`https://api.lanyard.rest/v1/users/${discordID}`)
     } else if (e.data["activities"].length > 0) {
       icon.className = "fa-solid fa-gamepad";
       content.innerText = `Playing ${e.data["activities"][0].name}`;
+      content.href = "";
     }
   });
 
