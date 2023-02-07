@@ -53,6 +53,11 @@ webSocket.addEventListener("message", (event) => {
       content.innerText = `${data.d.spotify.song} - ${data.d.spotify.artist}`;
       content.href = `https://open.spotify.com/track/${data.d.spotify.track_id}`;
     } else if (data.d.activities.length > 0) {
+      if(data.d.activities[0].name == "Custom Status"){
+       icon.className = "fa-brands fa-spotify";
+       content.innerText = `i'm not listening to anything right now`;
+       content.href = "https://open.spotify.com/user/xxtvgl8ffahtg5s22hu1l7squ";
+      }
       icon.className = "fa-solid fa-gamepad";
       content.innerText = `Playing ${data.d.activities[0].name}`;
       content.href = "";
