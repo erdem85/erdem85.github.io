@@ -17,10 +17,6 @@ fetch(`https://api.lanyard.rest/v1/users/${discordID}`)
     if (e.data["listening_to_spotify"]) {
       content.innerText = `${e.data.spotify.song} - ${e.data.spotify.artist}`;
       content.href = `https://open.spotify.com/track/${e.data.spotify.track_id}`;
-    } else if (e.data["activities"].length > 0) {
-      icon.className = "fa-solid fa-gamepad";
-      content.innerText = `Playing ${e.data["activities"][0].name}`;
-      content.href = "";
     }
   });
 
@@ -52,15 +48,6 @@ webSocket.addEventListener("message", (event) => {
       icon.className = "fa-brands fa-spotify";
       content.innerText = `${data.d.spotify.song} - ${data.d.spotify.artist}`;
       content.href = `https://open.spotify.com/track/${data.d.spotify.track_id}`;
-    } else if (data.d.activities.length > 0) {
-      if(data.d.activities[0].name == "Custom Status"){
-       icon.className = "fa-brands fa-spotify";
-       content.innerText = `i'm not listening to anything right now`;
-       content.href = "https://open.spotify.com/user/xxtvgl8ffahtg5s22hu1l7squ";
-      }
-      icon.className = "fa-solid fa-gamepad";
-      content.innerText = `Playing ${data.d.activities[0].name}`;
-      content.href = "";
     } else {
       icon.className = "fa-brands fa-spotify";
       content.innerText = `i'm not listening to anything right now`;
