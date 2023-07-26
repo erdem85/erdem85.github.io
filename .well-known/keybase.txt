@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/erdm
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://erdem.js.org
+  * I am erdm (https://keybase.io/erdm) on keybase.
+  * I have a public key ASA0UqH2hf-cxfFuSu156RzJuJJXvL7xZSPWM3WXRQCcCwo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01203452a1f685ff9cc5f16e4aed79e91cc9b89257bcbef16523d633759745009c0b0a",
+      "host": "keybase.io",
+      "kid": "01203452a1f685ff9cc5f16e4aed79e91cc9b89257bcbef16523d633759745009c0b0a",
+      "uid": "b0c84fa957fd2797b215e00fa0ba2819",
+      "username": "erdm"
+    },
+    "merkle_root": {
+      "ctime": 1690358753,
+      "hash": "33322ae315546f2c56ac9d52a46cc4e9e3f94618d1b93b3601d7ee22f3e17170acad74e69ea86fe3a0a73dd9b16319e456a05cf9201964c43d6e217da146d3e9",
+      "hash_meta": "ea1e7a476a4673b08aa0b3f602cd5630a8263ecfd016d4c11281e655b399c61e",
+      "seqno": 24731410
+    },
+    "service": {
+      "entropy": "YCzEVU7UqYmxkTDLyo3/S0/7",
+      "hostname": "erdem.js.org",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "6.2.0"
+  },
+  "ctime": 1690358771,
+  "expire_in": 504576000,
+  "prev": "5be03a56af36c1bd16379d70418eaa80f8fb5cc698bbeeeb315c1c2c14154a4b",
+  "seqno": 9,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgNFKh9oX/nMXxbkrteekcybiSV7y+8WUj1jN1l0UAnAsKp3BheWxvYWTESpcCCcQgW+A6Vq82wb0WN51wQY6qgPj7XMaYu+7rMVwcLBQVSkvEIOLX7DdstZeVlQkAOv4fWvnXHU+STH4G+M6U3rPFhxzDAgHCo3NpZ8RAuGpUyzB/vQsr/WIVC39ZxvhA+Tl60CY0LPZzsc3J+WOVunGy7kcvmTRZDbptxtF31mBaEJtbcrSasoUkyPgID6hzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIOt948e7n3jKNNXw4MNadxBUTobGFTFH5E/8esjup8Pto3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/erdm
+
+==================================================================
