@@ -1,19 +1,11 @@
 let content = document.getElementById("statustext");
 let icon = document.getElementById("statusicon");
-// fa-brands fa-spotify
-// fa-solid fa-gamepad
 let webSocket = new WebSocket("wss://api.lanyard.rest/socket");
 let discordID = "889937921073881138";
 
 fetch(`https://api.lanyard.rest/v1/users/${discordID}`)
   .then((response) => response.json())
   .then((e) => {
-    /**
-         * if(e.data["discord_user"]){
-         * document.getElementById("avatar").src = `https://cdn.discordapp.com/avatars/${discordID}/${e.data["discord_user"].avatar}.png?size=4096`
-        }
-        **/
-
     if (e.data["listening_to_spotify"]) {
       content.innerText = `${e.data.spotify.song} - ${e.data.spotify.artist}`;
       content.href = `https://open.spotify.com/track/${e.data.spotify.track_id}`;
@@ -30,7 +22,7 @@ webSocket.addEventListener("message", (event) => {
         d: {
           subscribe_to_id: discordID,
         },
-      })
+      }),
     );
     setInterval(() => {
       webSocket.send(
@@ -39,7 +31,7 @@ webSocket.addEventListener("message", (event) => {
           d: {
             heartbeat_interval: 30000,
           },
-        })
+        }),
       );
     }, 30000);
   }
