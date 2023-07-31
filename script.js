@@ -9,6 +9,9 @@ fetch(`https://api.lanyard.rest/v1/users/${discordID}`)
     if (e.data["listening_to_spotify"]) {
       content.innerText = `${e.data.spotify.song} - ${e.data.spotify.artist}`;
       content.href = `https://open.spotify.com/track/${e.data.spotify.track_id}`;
+    }else{
+      content.innerText = `i'm not listening to anything right now`;
+      content.href = "https://open.spotify.com/user/xxtvgl8ffahtg5s22hu1l7squ";
     }
   });
 
