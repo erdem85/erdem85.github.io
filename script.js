@@ -1,52 +1,17 @@
+const lastfm_username = "erdempro"
+const lastfm_apikey = "a4d9e1faeba3226927c76ccf9d5316da"
 let content = document.getElementById("statustext");
-let icon = document.getElementById("statusicon");
-let webSocket = new WebSocket("wss://api.lanyard.rest/socket");
-let discordID = "889937921073881138";
 
-fetch(`https://api.lanyard.rest/v1/users/${discordID}`)
-  .then((response) => response.json())
-  .then((e) => {
-    if (e.data["listening_to_spotify"]) {
-      content.innerText = `${e.data.spotify.song} - ${e.data.spotify.artist}`;
-      content.href = `https://open.spotify.com/track/${e.data.spotify.track_id}`;
+function fetchtrack(){
+    fetch(`https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${lastfm_username}&api_key=${lastfm_apikey}&format=json`).then(response => response.json()).then(e => {
+    if(e["recenttracks"]){
+        content.innerText = `${e.recenttracks.track[0].name} - ${e.recenttracks.track[0].artist["#text"]}`
+        content.href = e.recenttracks.track[0].url
     }else{
-      content.innerText = `i'm not listening to anything right now`;
-      content.href = "https://open.spotify.com/user/xxtvgl8ffahtg5s22hu1l7squ";
+        content.innerText = `last track listened to could not be fetched from last.fm`
     }
-  });
+})
+}
 
-webSocket.addEventListener("message", (event) => {
-  data = JSON.parse(event.data);
-
-  if (event.data == '{"op":1,"d":{"heartbeat_interval":30000}}') {
-    webSocket.send(
-      JSON.stringify({
-        op: 2,
-        d: {
-          subscribe_to_id: discordID,
-        },
-      }),
-    );
-    setInterval(() => {
-      webSocket.send(
-        JSON.stringify({
-          op: 3,
-          d: {
-            heartbeat_interval: 30000,
-          },
-        }),
-      );
-    }, 30000);
-  }
-  if (data.t == "PRESENCE_UPDATE") {
-    if (data.d.spotify) {
-      icon.className = "fa-brands fa-spotify";
-      content.innerText = `${data.d.spotify.song} - ${data.d.spotify.artist}`;
-      content.href = `https://open.spotify.com/track/${data.d.spotify.track_id}`;
-    } else {
-      icon.className = "fa-brands fa-spotify";
-      content.innerText = `i'm not listening to anything right now`;
-      content.href = "https://open.spotify.com/user/xxtvgl8ffahtg5s22hu1l7squ";
-    }
-  }
-});
+fetchtrack()
+setInterval(fetchtrack, 15000);
