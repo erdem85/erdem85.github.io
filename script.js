@@ -19,4 +19,4 @@ function fetchtrack(){
 }
 
 fetchtrack()
-setInterval(fetchtrack, 15000);
+setInterval(fetchtrack, 4000);
